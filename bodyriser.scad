@@ -31,11 +31,11 @@ module bodyriser() {
         }
         translate([-50,0,post_above]) rotate([0,90,0]) cylinder(d=pinhole_d, h=100);
         
-        translate([0,0,-post_under-1]) cylinder(d=post_d, h=post_under-1);
+        translate([0,0,-post_under-1]) cylinder(d=post_d, h=post_under);
         translate([0,0,-post_under-0.1]) cylinder(d1=post_d+1, d2=post_d, h=1);
         
         translate([-50,0,-2-5.5]) rotate([0,90,0]) cylinder(d=pinhole_d, h=100);
-        translate([-50,0,-2-5.5-5.5]) rotate([0,90,0]) cylinder(d=pinhole_d, h=100);
+        %translate([-50,0,-2-5.5-5.5]) rotate([0,90,0]) cylinder(d=pinhole_d, h=100);
         
     }
     
