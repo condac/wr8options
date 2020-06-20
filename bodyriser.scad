@@ -3,7 +3,7 @@ post_d = 7.3;
 
 post_d2 = 13;
 
-post_above = 8;
+post_above = 3;
 
 post_under = 15;
 
@@ -20,7 +20,7 @@ module bodyriser() {
         union() {
             hull() {
                 translate([0,0,-5]) cylinder(d=post_d, h=1);
-                translate([0,0,post_above-post_d/2]) sphere(d=post_d);
+                translate([0,0,post_above+1]) sphere(d=post_d);
             }
             
             hull() {
@@ -29,9 +29,10 @@ module bodyriser() {
             }
             
         }
-        translate([-50,0,post_above-post_d/2]) rotate([0,90,0]) cylinder(d=pinhole_d, h=100);
+        translate([-50,0,post_above]) rotate([0,90,0]) cylinder(d=pinhole_d, h=100);
         
         translate([0,0,-post_under-1]) cylinder(d=post_d, h=post_under-1);
+        translate([0,0,-post_under-0.1]) cylinder(d1=post_d+1, d2=post_d, h=1);
         
         translate([-50,0,-2-5.5]) rotate([0,90,0]) cylinder(d=pinhole_d, h=100);
         translate([-50,0,-2-5.5-5.5]) rotate([0,90,0]) cylinder(d=pinhole_d, h=100);
